@@ -1,10 +1,10 @@
 'use client'
-import { AppDispatch, AppSelector } from "@/redux/store";
+import { AppDispatch, useAppSelector } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import { removeBooking } from "@/redux/features/bookSlice";
 
 export default function BookingList() {
-    const booking = AppSelector((state) => state.book?.bookItems);
+    const booking = useAppSelector((state) => state.bookSlice.bookItems);
     const dispatch = useDispatch<AppDispatch>();
 
     return (
